@@ -6,4 +6,10 @@ export const defaultNodes = [
         data: { label: "Node" },
         type: "ButtonHandleDemo",
     },
+    {
+        id: "h1",
+        type: "leadSource",
+        position: { x: 250, y: 50 },
+        data: { label: "Lead Source" },
+    },
 ];
