@@ -1,13 +1,26 @@
+import { Background, ReactFlow } from "@xyflow/react";
+import ButtonHandleDemo from "./components/ButtonHandleDemo";
 import '@xyflow/react/dist/style.css';
- 
-import { BaseNode } from '@/components/base-node';
- 
-function App() {
+
+const defaultNodes = [
+  {
+    id: "1",
+    position: { x: 0, y: 0 },
+    data: { label: "Node" },
+    type: "ButtonHandleDemo",
+  },
+];
+
+const nodeTypes = {
+  ButtonHandleDemo: ButtonHandleDemo,
+};
+
+export default function App() {
   return (
-    <div className="w-screen h-screen p-8">
-      <BaseNode selected={false}>Hi! 👋</BaseNode>
+    <div style={{ height: '100vh', width: '100vw' }}>
+      <ReactFlow defaultNodes={defaultNodes} nodeTypes={nodeTypes} fitView>
+        <Background />
+      </ReactFlow>
     </div>
   );
 }
- 
-export default App;
